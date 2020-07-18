@@ -1,12 +1,13 @@
 import bcrypt from "bcrypt";
 import { IsEmail } from "class-validator";
-import { BaseEntity, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 const BCRYPT_ROUNDS = 10;
 
 @Entity()
 class User extends BaseEntity {
-  @PrimaryGeneratedColumn() id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column({ type: "text", unique: true })
   @IsEmail()
@@ -57,7 +58,7 @@ class User extends BaseEntity {
   @CreateDateColumn()
   createdAt: string;
 
-  @CreateDateColumn()
+  @UpdateDateColumn()
   updatedAt: string;
 
   get fullName(): string {
