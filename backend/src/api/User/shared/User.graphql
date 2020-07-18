@@ -1,0 +1,21 @@
+type User {
+  id: Int!
+  password: String
+  email: String
+  verifieddEmail: Boolean!
+  firstName: String!
+  lastName: String!
+  fullName: String
+  age: Int
+  phoneNumber: String
+  verifieddPhoneNumber: Boolean!
+  profilePhoto: String
+  createdAt: String
+  updatedAt: String
+  isDriving: Boolean!
+  isRiding: Boolean!
+  isTaken: Boolean!
+  lastLng: Float!
+  lastLat: Float!
+  lastOrientation: Float!
+}
