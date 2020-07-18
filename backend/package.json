@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.6",
     "@types/helmet": "0.0.47",
     "@types/morgan": "^1.9.1",
@@ -26,6 +27,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "class-validator": "^0.12.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
