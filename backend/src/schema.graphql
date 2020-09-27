@@ -50,8 +50,8 @@ type FacebookConnectResponse {
   token: String
 }
 
-type Muation {
-  facebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse
+type Mutation {
+  facebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
 }
 
 type User {

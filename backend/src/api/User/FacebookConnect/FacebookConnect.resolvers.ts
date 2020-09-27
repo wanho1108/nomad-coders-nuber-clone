@@ -1,10 +1,10 @@
-import { Resolvers } from "src/types/resolvers";
-import { FacebookConnectMuationArgs, FacebookConnectResponse } from "src/types/graphql"
-import User from "src/entities/User";
+import User from "../../../entities/User";
+import { FacebookConnectMutationArgs, FacebookConnectResponse } from "../../../types/graphql"
+import { Resolvers } from "../../../types/resolvers";
 
 const resolvers: Resolvers = {
-  Mutations: {
-    FacebookConnect: async (_, args: FacebookConnectMuationArgs): Promise<FacebookConnectResponse> => {
+  Mutation: {
+    FacebookConnect: async (_, args: FacebookConnectMutationArgs): Promise<FacebookConnectResponse> => {
       const { fbId } = args;
       try {
         const existingUser = await User.findOne({ fbId })
@@ -13,7 +13,7 @@ const resolvers: Resolvers = {
           return {
             ok: true,
             error: null,
-            token: "Comming soon"
+            token: "Comming soon, already"
           }
         }
       } catch (error) {
@@ -30,7 +30,7 @@ const resolvers: Resolvers = {
         return {
           ok: true,
           error: null,
-          token: "Comming soon"
+          token: "Comming soon, created"
         }
       } catch (error) {
         return {
