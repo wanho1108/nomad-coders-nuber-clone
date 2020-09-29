@@ -1,7 +1,7 @@
-import User from "src/entities/User";
-import Verification from "src/entities/Verification";
-import { CompletePhoneVerificationMutationArgs, CompletePhoneVerificationResponse } from "src/types/graphql";
-import { Resolvers } from "src/types/resolvers";
+import User from "@/entities/User";
+import Verification from "@/entities/Verification";
+import { CompletePhoneVerificationMutationArgs, CompletePhoneVerificationResponse } from "@/types/graphql";
+import { Resolvers } from "@/types/resolvers";
 
 const resolvers: Resolvers = {
   Mutation: {

@@ -1,4 +1,4 @@
-import { verificationTarget } from "src/types/types";
+import { verificationTarget } from "@/types/types";
 import { BaseEntity, BeforeInsert, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 const PHONE = "PHONE";

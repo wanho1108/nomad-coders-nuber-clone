@@ -1,6 +1,6 @@
+import Chat from "@/entities/Chat";
+import User from "@/entities/User";
 import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import Chat from "./Chat";
-import User from "./User";
 
 @Entity()
 class Message extends BaseEntity {

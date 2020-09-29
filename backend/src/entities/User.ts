@@ -1,9 +1,9 @@
+import Chat from "@/entities/Chat";
+import Message from "@/entities/Message";
+import Ride from "@/entities/Ride";
 import bcrypt from "bcrypt";
 import { IsEmail } from "class-validator";
 import { BaseEntity, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import Chat from "./Chat";
-import Message from "./Message";
-import Ride from "./Ride";
 
 const BCRYPT_ROUNDS = 10;
 
