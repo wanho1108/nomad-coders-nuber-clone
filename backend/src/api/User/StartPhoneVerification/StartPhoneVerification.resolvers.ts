@@ -1,15 +1,23 @@
 import Verification from "@/entities/Verification";
-import { StartPhoneVerificationMutationArgs, StartPhoneVerificationResponse } from "@/types/graphql";
+import {
+  StartPhoneVerificationMutationArgs,
+  StartPhoneVerificationResponse,
+} from "@/types/graphql";
 import { Resolvers } from "@/types/resolvers";
 import { sendVerficationSMS } from "@/utils/sendSMS";
 
 const resolvers: Resolvers = {
   Mutation: {
-    StartPhoneVerification: async (_, args: StartPhoneVerificationMutationArgs): Promise<StartPhoneVerificationResponse> => {
+    StartPhoneVerification: async (
+      _,
+      args: StartPhoneVerificationMutationArgs
+    ): Promise<StartPhoneVerificationResponse> => {
       const { phoneNumber } = args;
 
       try {
-        const existingVerification = await Verification.findOne({ payload: phoneNumber });
+        const existingVerification = await Verification.findOne({
+          payload: phoneNumber,
+        });
 
         if (existingVerification) {
           existingVerification.remove();
@@ -17,25 +25,23 @@ const resolvers: Resolvers = {
 
         const newVerification = await Verification.create({
           payload: phoneNumber,
-          target: 'PHONE',
+          target: "PHONE",
         }).save();
-
-        console.log(newVerification);
 
         await sendVerficationSMS(newVerification.payload, newVerification.key);
 
         return {
           ok: true,
-          error: null
-        }
+          error: null,
+        };
       } catch (error) {
         return {
           ok: false,
-          error: error.messgae
-        }
+          error: error.messgae,
+        };
       }
-    }
-  }
+    },
+  },
 };
 
 export default resolvers;
