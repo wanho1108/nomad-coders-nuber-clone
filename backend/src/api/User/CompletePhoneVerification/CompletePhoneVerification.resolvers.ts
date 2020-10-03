@@ -33,7 +33,7 @@ const resolvers: Resolvers = {
       } catch (error) {
         return {
           ok: false,
-          error: error.messgae,
+          error: error.message,
           token: null,
         };
       }
@@ -64,7 +64,7 @@ const resolvers: Resolvers = {
       } catch (error) {
         return {
           ok: false,
-          error: error.messgae,
+          error: error.message,
           token: null,
         };
       }

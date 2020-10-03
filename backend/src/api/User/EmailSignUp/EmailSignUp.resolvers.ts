@@ -1,6 +1,6 @@
-import { Resolvers } from "@/types/resolvers";
-import { EmailSignUpMutationArgs, EmailSignUpResponse } from "@/types/graphql";
 import User from "@/entities/User";
+import { EmailSignUpMutationArgs, EmailSignUpResponse } from "@/types/graphql";
+import { Resolvers } from "@/types/resolvers";
 import createJWT from "@/utils/createJWT";
 
 const resolvers: Resolvers = {
@@ -32,7 +32,7 @@ const resolvers: Resolvers = {
       } catch (error) {
         return {
           ok: false,
-          error: error.messgae,
+          error: error.message,
           token: null,
         };
       }
