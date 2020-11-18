@@ -4,6 +4,8 @@
 node_modules
 generated
 prisma.yml
+schema.graphql
+graphql.d.ts
 .env.local
 .env.*.local
 npm-debug.log*
