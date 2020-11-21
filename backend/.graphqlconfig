@@ -1,7 +1,7 @@
 {
   "name": "Nuber Backend GraphQL Schema",
   "excludes": ["schema.graphql"],
-  "includes": ["./src/api/**/*.graphql"],
+  "includes": ["*.graphql"],
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
