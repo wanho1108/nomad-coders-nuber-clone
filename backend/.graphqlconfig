@@ -1,0 +1,16 @@
+{
+  "name": "Nuber Backend GraphQL Schema",
+  "excludes": ["schema.graphql"],
+  "includes": ["./src/api/**/*.graphql"],
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:4000/playground",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
