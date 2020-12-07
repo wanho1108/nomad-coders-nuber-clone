@@ -4,6 +4,6 @@ type GetMyProfileResponse {
   user: User
 }
 
-extend type Query {
+type Query {
   GetMyProfile: GetMyProfileResponse!
 }

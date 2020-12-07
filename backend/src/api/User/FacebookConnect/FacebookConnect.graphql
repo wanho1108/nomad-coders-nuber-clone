@@ -4,6 +4,6 @@ type FacebookConnectResponse {
   token: String
 }
 
-extend type Mutation {
+type Mutation {
   FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
 }

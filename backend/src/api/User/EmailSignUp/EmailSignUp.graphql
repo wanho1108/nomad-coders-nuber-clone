@@ -4,7 +4,7 @@ type EmailSignUpResponse {
   token: String
 }
 
-extend type Mutation {
+type Mutation {
   EmailSignUp(
     firstName: String!
     lastName: String!

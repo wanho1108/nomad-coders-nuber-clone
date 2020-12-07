@@ -4,6 +4,6 @@ type CompletePhoneVerificationResponse {
   token: String
 }
 
-extend type Mutation {
+type Mutation {
   CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!
 }
