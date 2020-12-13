@@ -1,9 +1,6 @@
 import User from "@/entities/User";
 import Verification from "@/entities/Verification";
-import {
-  CompletePhoneVerificationMutationArgs,
-  CompletePhoneVerificationResponse,
-} from "@/types/graphql";
+import { CompletePhoneVerificationMutationArgs, CompletePhoneVerificationResponse } from "@/types/graphql";
 import { Resolvers } from "@/types/resolvers";
 import createJWT from "@/utils/createJWT";
 
@@ -44,7 +41,7 @@ const resolvers: Resolvers = {
         });
 
         if (user) {
-          user.verifieddPhoneNumber = true;
+          user.verifiedPhoneNumber = true;
           user.save();
 
           const token = createJWT(user.id);

@@ -19,7 +19,7 @@ const resolvers: Resolvers = {
             });
 
             if (verification) {
-              user.verifieddEmail = true;
+              user.verifiedEmail = true;
               user.save();
 
               return {

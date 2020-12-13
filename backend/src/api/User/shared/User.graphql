@@ -2,13 +2,13 @@ type User {
   id: Int!
   password: String
   email: String
-  verifieddEmail: Boolean!
+  verifiedEmail: Boolean!
   firstName: String!
   lastName: String!
   fullName: String
   age: Int
   phoneNumber: String
-  verifieddPhoneNumber: Boolean!
+  verifiedPhoneNumber: Boolean!
   profilePhoto: String
   isDriving: Boolean!
   isRiding: Boolean!

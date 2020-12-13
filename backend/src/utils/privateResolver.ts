@@ -1,16 +1,9 @@
-const privateResolver = (resolverFunction) => async (
-  parent,
-  args,
-  context,
-  info
-) => {
-  if (context.req.user) {
-    throw new Error("No JWT. i refuse to proceed");
+const privateResolver = (resolverFunction) => async (parent, args, context, info) => {
+  if (!context.req.user) {
+    throw new Error("No JWT. I refuse to proceed");
   }
-
-  const resolverd = await resolverFunction(parent, args, context, info);
-
-  return resolverd;
+  const resolved = await resolverFunction(parent, args, context, info);
+  return resolved;
 };
 
 export default privateResolver;

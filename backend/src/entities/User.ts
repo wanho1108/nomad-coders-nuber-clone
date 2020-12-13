@@ -3,7 +3,18 @@ import Message from "@/entities/Message";
 import Ride from "@/entities/Ride";
 import bcrypt from "bcrypt";
 import { IsEmail } from "class-validator";
-import { BaseEntity, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import {
+  BaseEntity,
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm";
 
 const BCRYPT_ROUNDS = 10;
 
@@ -17,7 +28,7 @@ class User extends BaseEntity {
   email: string | null;
 
   @Column({ type: "boolean", default: false })
-  verifieddEmail: boolean;
+  verifiedEmail: boolean;
 
   @Column({ type: "text" })
   firstName: string;
@@ -35,7 +46,7 @@ class User extends BaseEntity {
   phoneNumber: string;
 
   @Column({ type: "boolean", default: false })
-  verifieddPhoneNumber: boolean;
+  verifiedPhoneNumber: boolean;
 
   @Column({ type: "text" })
   profilePhoto: string;
@@ -61,16 +72,16 @@ class User extends BaseEntity {
   @Column({ type: "text", nullable: true })
   fbId: string;
 
-  @ManyToOne(type => Chat, chat => chat.particpants)
+  @ManyToOne((type) => Chat, (chat) => chat.particpants)
   chat: Chat;
 
-  @OneToMany(type => Message, message => message.user)
+  @OneToMany((type) => Message, (message) => message.user)
   messages: Message[];
 
-  @OneToMany(type => Ride, ride => ride.passenger)
+  @OneToMany((type) => Ride, (ride) => ride.passenger)
   ridesAsPassenger: Ride[];
 
-  @OneToMany(type => Ride, ride => ride.driver)
+  @OneToMany((type) => Ride, (ride) => ride.driver)
   ridesAsDriver: Ride[];
 
   @CreateDateColumn()
@@ -99,7 +110,6 @@ class User extends BaseEntity {
       this.password = hashedPassword;
     }
   }
-
 }
 
 export default User;
