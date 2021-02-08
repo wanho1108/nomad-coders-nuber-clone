@@ -17,10 +17,10 @@ class Message extends BaseEntity {
   user: User;
 
   @CreateDateColumn()
-  creatdAt: string;
+  createdAt: string;
 
   @UpdateDateColumn()
-  updaedAt: string;
+  updatedAt: string;
 }
 
 export default Message;
