@@ -13,7 +13,15 @@ class App {
   constructor() {
     this.pubSub = new PubSub();
     this.pubSub.ee.setMaxListeners(99);
-    this.app = new GraphQLServer({schema, context: req => ({req: req.request, pubSub: this.pubSub})});
+    this.app = new GraphQLServer({
+      schema,
+      context: req => {
+        return {
+          req: req.request,
+          pubSub: this.pubSub
+        };
+      }
+    });
     this.middlewares();
   }
 
